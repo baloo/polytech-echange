@@ -1,0 +1,11 @@
+"= form.error_messages
+
+%p
+  = form.label :title, "Titre de la dépêche"
+  = form.text_field :title
+%p
+  = form.label :body, "Contenu de la dépêche"
+  = form.text_area :body
+%p
+  = form.submit "Prévisualiser"
+  = form.submit "Soumettre cette dépêche" if @preview_mode

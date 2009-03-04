@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  announcement_id: 1
+  title: MyString
+  body: MyText
+  materialized_path: MyString
+
+two:
+  announcement_id: 1
+  title: MyString
+  body: MyText
+  materialized_path: MyString
