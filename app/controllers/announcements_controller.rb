@@ -3,7 +3,7 @@ class AnnouncementsController < ApplicationController
   # GET /announcements.xml
   def index
     # On demande 10 annonces par page
-    @announcements = Announcement.paginate(:page => params[:page], :per_page => 10)
+    @announcements = Announcement.paginate(:page => params[:page], :per_page => 5)
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,2 +1,5 @@
 %div.announcement{:id => "annoucement-#{post.id}"}
-  = post.title
+  %h2
+    = link_to post.title, post
+  %p
+    = post.body

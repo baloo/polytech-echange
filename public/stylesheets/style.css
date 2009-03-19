@@ -69,7 +69,7 @@ blockquote{
         overflow:hidden;
 }
 
-#top h2 {
+#top h1 {
         color: White;
         letter-spacing: 3px;
         font-size: 2.4em;
@@ -81,14 +81,15 @@ blockquote{
         float:left;
         background: url(/images/bg_t.gif) no-repeat;
         padding-left: 10px;
+        text-transform: capitalize; 
 }
 
-#top h2 a {
+#top h1 a {
         color: white;
         text-decoration: none;
 }
 
-#top h2 a:hover {
+#top h1 a:hover {
         color: #93B300;
 }
 
@@ -147,6 +148,7 @@ blockquote{
 
 #content h2 {
         margin: 0;
+        text-transform: capitalize; 
         padding: 10px 0 10px 0;
 }
 
@@ -169,6 +171,16 @@ blockquote{
         display: block;
        margin-left: 20px;
         display: inline;
+}
+
+
+#left .pagination a, #left .pagination span{
+  border: 1px solid #CCCCCC;
+  padding: 1px;
+}
+
+#left .pagination span{
+  background-color: #F5F5F5;
 }
 
 
@@ -263,4 +275,10 @@ blockquote{
 #footer p {
         margin: 0px;
         padding: 0;
+}
+
+
+
+span.translation_missing {
+  color: #FF7777;
 }
