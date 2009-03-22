@@ -200,6 +200,7 @@ blockquote{
         border: 1px solid #E1E1E1;
         padding:10px 10px 15px 10px;
         float: right;
+        margin-bottom: 10px;
 }
 
 #right .box h2 {
