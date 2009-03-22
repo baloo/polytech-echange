@@ -3,12 +3,12 @@ module ApplicationHelper
   #include WillPaginate::ViewHelpers 
   def title(title, tag=nil)
     @title << title
+    content_tag(tag, title) if tag
   end
 
   def h2(str)
     title(str, :h2)
   end
-
 
 
   #def will_paginate_with_i18n(collection, options = {}) 
