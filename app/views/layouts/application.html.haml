@@ -16,6 +16,14 @@
           = yield :layout
         #right
           .box
+            - if logged_in?
+              %h2= t :user_block_title, :user => current_user.login
+              %ul
+                %li= link_to(t(:announcements_new), "/announcements/new")
+                %li= link_to(t(:user_logout), "/logout")
+            - else
+
+          .box
             %h2= t :recent_announcements
             %ul
               %li Recent #1
