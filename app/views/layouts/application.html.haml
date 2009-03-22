@@ -1,12 +1,12 @@
 !!! Strict
 %html{'lang' => 'fr'}
   %head
-    %title= @title
+    %title= @title.join '::'
     = stylesheet_link_tag 'style'
   %body
     #wrap
       #top
-        %h1= link_to @title, '/'
+        %h1= link_to @title.join('::'), '/'
         #menu
           %ul
             %li= link_to t(:layout_home), "/"

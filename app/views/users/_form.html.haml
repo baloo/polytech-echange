@@ -6,12 +6,15 @@
     = form.text_field :login, :required => 'required'
   %p
     = form.label :email, t(:user_email)
+    %br
     = form.text_field :email, :required => 'required'
   %p
     = form.label :password, t(:user_password)
+    %br
     = form.password_field :password, :required => 'required'
   %p
     = form.label :password_confirmation, t(:user_password_confirm)
+    %br
     = form.password_field :password_confirmation, :required => 'required'
   %p
     = form.submit t(:user_signup)
