@@ -1,5 +1,6 @@
 %div.announcement{:id => "annoucement-#{post.id}"}
   %h2
     = link_to post.title, post
+  %p= posted_by(post)
   %p
     = post.body

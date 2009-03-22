@@ -13,7 +13,7 @@ ActiveRecord::Schema.define(:version => 20090322124512) do
 
   create_table "announcements", :force => true do |t|
     t.string   "title"
-    t.string   "sender"
+    t.integer  "user_id"
     t.text     "body"
     t.string   "status"
     t.datetime "created_at"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20090322124512) do
   create_table "comments", :force => true do |t|
     t.integer  "announcement_id"
     t.string   "title"
-    t.string   "sender"
+    t.integer  "user_id"
     t.text     "body"
     t.string   "materialized_path"
     t.datetime "created_at"

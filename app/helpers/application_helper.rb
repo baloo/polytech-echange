@@ -10,6 +10,19 @@ module ApplicationHelper
     title(str, :h2)
   end
 
+  def article_for(record, &blk)
+    content_tag_for(:article, record, :class => 'content', &blk)
+  end
+
+  def posted_by(content)
+    user = content.user || current_user
+    user_link = link_to(user.login, user)
+    #TODO : localize datetime
+    date_time = (content.created_at || DateTime.now).to_s(:posted)
+    t :posted_by, {:user => user_link, :date => date_time}
+  end
+
+
 
   #def will_paginate_with_i18n(collection, options = {}) 
   #  will_paginate_without_i18n(collection, options.merge(:previous_label => I18n.t(:previous), :next_label => I18n.t(:next))) 

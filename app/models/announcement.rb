@@ -1,5 +1,4 @@
 class Announcement < Content
-
   ### Workflow
   # Setup
   acts_as_state_machine :initial => :draft, :column => 'status'

@@ -25,6 +25,7 @@ class AnnouncementsController < ApplicationController
   # GET /announcements/new
   # GET /announcements/new.xml
   def new
+    @preview_mode = false
     @announcement = Announcement.new
 
     respond_to do |format|
@@ -43,9 +44,12 @@ class AnnouncementsController < ApplicationController
   def create
     @announcement = Announcement.new(params[:announcement])
 
+    @preview_mode = (params[:commit] == t(:announcement_preview, :default => 'preview'))
+    @announcement.user = current_user
+
     respond_to do |format|
-      if @announcement.save
-        flash[:notice] = 'Announcement was successfully created.'
+      if !@preview_mode && @announcement.save
+        flash[:notice] = t :announcement_successfully_created
         format.html { redirect_to(@announcement) }
         format.xml  { render :xml => @announcement, :status => :created, :location => @announcement }
       else
@@ -60,8 +64,10 @@ class AnnouncementsController < ApplicationController
   def update
     @announcement = Announcement.find(params[:id])
 
+    @preview_mode = (params[:commit] == t(:announcement_preview, :default => 'preview'))
+
     respond_to do |format|
-      if @announcement.update_attributes(params[:announcement])
+      if !@preview_mode && @announcement.update_attributes(params[:announcement])
         flash[:notice] = 'Announcement was successfully updated.'
         format.html { redirect_to(@announcement) }
         format.xml  { head :ok }
