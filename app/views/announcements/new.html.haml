@@ -1,3 +1,5 @@
-= h2 t :create_announcement
+= h2 t :publish_announcement
 
-= render :partial => "form"
+= render :partial => 'preview', :object => @announcement if @preview_mode
+
+= render :partial => 'form', :locals => {:announcement => @announcement, :preview_mode => @preview_mode}

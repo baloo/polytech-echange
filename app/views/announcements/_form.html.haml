@@ -1,11 +1,14 @@
-"= form.error_messages
+- form_for setup_announcement(announcement) do |form|
+  = form.error_messages
 
-%p
-  = form.label :title, "Titre de la dépêche"
-  = form.text_field :title
-%p
-  = form.label :body, "Contenu de la dépêche"
-  = form.text_area :body
-%p
-  = form.submit "Prévisualiser"
-  = form.submit "Soumettre cette dépêche" if @preview_mode
+  %p
+    = form.label :title, t(:announcement_title)
+    %br
+    = form.text_field :title
+  %p
+    = form.label :body, t(:announcement_body)
+    %br
+    = form.text_area :body
+  %p
+    = form.submit t(:announcement_preview, :default => 'preview')
+    = form.submit t(:announcement_post) if preview_mode

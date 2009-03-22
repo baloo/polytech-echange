@@ -1,0 +1,10 @@
+- article_for preview do
+  - debugger
+  %h3= preview.title
+  %p
+    = posted_by(preview)
+  .content
+    = preview.body
+  %p
+    -#= read_it(preview)
+
