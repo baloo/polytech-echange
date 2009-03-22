@@ -9,8 +9,9 @@
         %h1= link_to @title, '/'
         #menu
           %ul
-            %li= link_to "home", "/"
-            %li= link_to "post", "/announcements/new"
+            %li= link_to t(:layout_home), "/"
+            -if logged_in?
+              %li= link_to t(:layout_post), "/announcements/new"
       #content
         #left
           = yield :layout
@@ -22,6 +23,10 @@
                 %li= link_to(t(:announcements_new), "/announcements/new")
                 %li= link_to(t(:user_logout), "/logout")
             - else
+              %h2= t :user_block_title_not_logged
+              %ul
+                %li= link_to(t(:user_login), "/login")
+                %li= link_to(t(:user_signin), "/signup")
 
           .box
             %h2= t :recent_announcements
