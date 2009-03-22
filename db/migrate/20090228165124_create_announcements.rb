@@ -2,7 +2,7 @@ class CreateAnnouncements < ActiveRecord::Migration
   def self.up
     create_table :announcements do |t|
       t.string :title
-      t.string :sender
+      t.references :user
       t.text :body
 
       t.string :status
