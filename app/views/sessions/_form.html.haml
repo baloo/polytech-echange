@@ -1,0 +1,15 @@
+- form_tag sessions_path do
+  %p
+    = label_tag "login", t(:user_login)
+    = text_field_tag :login, @login, :required => 'required', :id => "login"
+  %p
+    = label_tag "password", t(:user_password)
+    = password_field_tag :password, nil, :required => 'required', :id => "password"
+  %p
+    = label_tag "remember", t(:user_remember_me)
+    = check_box_tag :remember_me, '1', @remember_me, :id => "remember"
+  %p
+    = submit_tag t(:user_logme_in)
+
+
+
