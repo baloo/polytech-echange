@@ -1,6 +1,9 @@
 - title @announcement.title
 %h2
   = @announcement.title
+%p
+  = link_to(t(:announcement_edit), edit_announcement_path(@announcement)) if @announcement.editable_by?(current_user)
+  = link_to(t(:announcement_delete), @announcement, :method => :delete, :confirm => t(:announcement_are_you_sure))if @announcement.deletable_by?(current_user)
 %p= posted_by(@announcement)
 %p
   = @announcement.body
