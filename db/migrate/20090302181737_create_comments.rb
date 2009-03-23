@@ -3,6 +3,7 @@ class CreateComments < ActiveRecord::Migration
     create_table :comments do |t|
       t.integer :announcement_id
       t.string :title
+      t.references :announcement
       t.references :user
       t.text :body
       t.string :materialized_path

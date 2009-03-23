@@ -1,2 +1,3 @@
-class Comment < ActiveRecord::Base
+class Comment < Content
+  belongs_to :announcement
 end
