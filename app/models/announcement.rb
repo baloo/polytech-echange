@@ -21,4 +21,12 @@ class Announcement < Content
   end
 
 
+  # ACL 
+  def editable_by?(user)
+    user && (self.user == user)
+  end
+  def deletable_by?(user)
+    user && (self.user == user)
+  end
+
 end
