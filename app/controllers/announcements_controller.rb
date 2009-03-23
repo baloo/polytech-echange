@@ -27,8 +27,9 @@ class AnnouncementsController < ApplicationController
   def new
     @preview_mode = false
     @announcement = Announcement.new
-    # TODO: Changer l'exception si on a le temps
-    raise ActiveRecord::RecordNotFound.new unless @announcement && @announcement.creatable_by?(current_user)
+
+    # Controle de l'ACL
+    raise Exceptions::UserCreateDeniedError.new unless @announcement && @announcement.creatable_by?(current_user)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -39,16 +40,19 @@ class AnnouncementsController < ApplicationController
   # GET /announcements/1/edit
   def edit
     @announcement = Announcement.find(params[:id])
-    # TODO: Changer l'exception si on a le temps
-    raise ActiveRecord::RecordNotFound.new unless @announcement && @announcement.editable_by?(current_user)
+
+    # Controle de l'ACL
+    raise Exceptions::UserEditDeniedError.new unless @announcement && @announcement.editable_by?(current_user)
+
   end
 
   # POST /announcements
   # POST /announcements.xml
   def create
     @announcement = Announcement.new(params[:announcement])
-    # TODO: Changer l'exception si on a le temps
-    raise ActiveRecord::RecordNotFound.new unless @announcement && @announcement.creatable_by?(current_user)
+
+    # Controle de l'ACL
+    raise Exceptions::UserCreateDeniedError.new unless @announcement && @announcement.creatable_by?(current_user)
 
     @preview_mode = (params[:commit] == t(:announcement_preview, :default => 'preview'))
     @announcement.user = current_user
@@ -69,9 +73,10 @@ class AnnouncementsController < ApplicationController
   # PUT /announcements/1.xml
   def update
     @announcement = Announcement.find(params[:id])
-   # TODO: Changer l'exception si on a le temps
-    raise ActiveRecord::RecordNotFound.new unless @announcement && @announcement.editable_by?(current_user)
- 
+
+    # Controle de l'ACL
+    raise Exceptions::UserEditDeniedError.new unless @announcement && @announcement.editable_by?(current_user)
+
     @preview_mode = (params[:commit] == t(:announcement_preview, :default => 'preview'))
 
     respond_to do |format|
@@ -90,8 +95,10 @@ class AnnouncementsController < ApplicationController
   # DELETE /announcements/1.xml
   def destroy
     @announcement = Announcement.find(params[:id])
-    # TODO: Changer l'exception si on a le temps
-    raise ActiveRecord::RecordNotFound.new unless @announcement && @announcement.deletable_by?(current_user)
+
+    # Controle de l'ACL
+    raise Exceptions::UserDeleteDeniedError.new unless @announcement && @announcement.deletable_by?(current_user)
+
     @announcement.destroy
 
     respond_to do |format|
