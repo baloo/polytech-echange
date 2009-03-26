@@ -1,0 +1,8 @@
+Installer les gems :
+$ gem install haml columnize linecache will_paginate i18n mislav-will_paginate rails rake rdoc RedCloth rubyist-aasm sqlite3-ruby
+
+Mettre en place la base de données:
+rake db:migrate
+
+Lancer le serveur :
+script/server
