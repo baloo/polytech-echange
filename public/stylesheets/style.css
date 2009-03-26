@@ -284,3 +284,19 @@ blockquote{
 span.translation_missing {
   color: #FF7777;
 }
+
+
+#left .comments ul.threads, #left .comments ul.thread{
+  padding: 5px 0 5px 5px;
+  margin-right: -1px;
+  border-left: 1px dashed #CCCCCC;
+  border-top: 1px dashed #CCCCCC;
+  border-bottom: 1px dashed #CCCCCC;
+}
+#left .comments ul.threads{
+  border-right: 1px dashed #CCCCCC;
+}
+#left .comments li.comment{
+  list-style-image: none;
+  list-style-type: none;
+}

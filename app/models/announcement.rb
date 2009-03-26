@@ -30,6 +30,15 @@ class Announcement < Content
   end
 
 
+  def self.search(query)
+    if !query.to_s.strip.empty?
+      tokens = query.split.collect {|c| "%#{c.downcase}%"}
+      find_by_sql(["select a.* from announcements a where #{ (["(lower(a.title) like ?)"] * tokens.size).join(" and ") } order by a.created_at DESC", *(tokens).sort])
+    else
+      []
+    end
+  end
+
 
   # ACL 
   def creatable_by?(user)

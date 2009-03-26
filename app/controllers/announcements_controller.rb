@@ -3,7 +3,7 @@ class AnnouncementsController < ApplicationController
   # GET /announcements.xml
   def index
     # On demande 10 annonces par page
-    @announcements = Announcement.paginate(:page => params[:page], :per_page => 5)
+    @announcements = Announcement.find(:all, :conditions=>["created_at > ?", 10.day.ago]).paginate(:page => params[:page], :per_page => 5)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -116,16 +116,25 @@ class AnnouncementsController < ApplicationController
       format.xml  { render :xml => @announcements }
     end
   end
-  
-  def recent
-    debugger
-    @announcements = Announcement.find(:all, :order=>"created_at desc", :limit=> 5)
+
+
+  def search
+    @query = params["query"]
+    @announcements = Announcement.search(@query).paginate(:page => params[:page], :per_page => 5)
     
     respond_to do |format|
       format.html
+      format.xml  { render :xml => @announcements }
     end
-    
   end
+  def archive
+    # On demande 10 annonces par page
+    @announcements = Announcement.find(:all, :conditions=>["created_at < ?", 10.day.ago]).paginate(:page => params[:page], :per_page => 5)
 
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @announcements }
+    end
+  end
 
 end

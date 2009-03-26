@@ -22,17 +22,17 @@
               %h2= t :user_block_title, :user => current_user.login
               %ul
                 %li= link_to(t(:announcements_new), "/announcements/new")
+                %li= link_to(t(:announcement_archives), archive_path)
                 %li= link_to(t(:user_logout), "/logout")
             - else
               %h2= t :user_block_title_not_logged
               %ul
                 %li= link_to(t(:user_login), "/login")
                 %li= link_to(t(:user_signin), "/signup")
-
           .box
-            %h2= t :recent_announcements
-            = render :partial => "announcement/recent"
-
+            %h2= t :announcement_search_block
+            -form_tag({:controller => 'announcements', :action => 'search'}, :method => :post) do
+              =text_field_tag 'query'
         #clear
 
     #footer

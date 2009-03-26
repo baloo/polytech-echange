@@ -17,4 +17,7 @@ fr:
   announcement_are_you_sure: "Etes-vous sur de vouloir supprimer cette annonce ?"
   announcement_body_missing: "Le message est manquant"
   announcement_title_missing: "Le sujet est manquant"
+  announcement_search_send: "Chercher"
+  announcement_search_block: "Recterche"
+  announcement_archives: "Archives"
 

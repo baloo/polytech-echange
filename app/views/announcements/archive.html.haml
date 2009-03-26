@@ -1,0 +1,5 @@
+= h2(t(:announcement_archives))
+
+- @announcements.each do |announcement|
+  = render :partial => 'announcement', :locals => {:post => announcement}
+= will_paginate @posts

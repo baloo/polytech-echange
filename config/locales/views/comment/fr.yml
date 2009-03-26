@@ -9,3 +9,6 @@ fr:
   comment_preview: "Prévisualiser"
   comment_post: "Envoyer"
   comment_back_to_announcement: "Retour à l'annonce"
+  comment_body_missing: "Le message est manquant"
+  comment_title_missing: "Le sujet est manquant"
+

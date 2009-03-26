@@ -3,8 +3,19 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resource :sessions
 
+  map.resource :comments
+
   map.resources :announcements
   
+  map.resources :announcements do |announcement|
+    announcement.resources :comments
+  end
+  map.answer_comment '/announcements/:announcement_id/comments/:parent_id/answer', :controller => 'comments', :action => 'new'
+  
+  map.mine '/mine', :controller => 'announcements', :action => 'mine'
+  map.search '/search', :controller => 'announcements', :action => 'search'
+  map.archive '/archive', :controller => 'announcements', :action => 'archive'
+
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
