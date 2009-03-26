@@ -12,6 +12,7 @@
             %li= link_to t(:layout_home), "/"
             -if logged_in?
               %li= link_to t(:layout_post), "/announcements/new"
+              %li= link_to t(:layout_mine), mine_url
       #content
         #left
           = yield :layout
@@ -30,13 +31,7 @@
 
           .box
             %h2= t :recent_announcements
-            %ul
-              %li Recent #1
-              %li Recent #2
-              %li Recent #3
-              %li Recent #4
-              %li Recent #5
-          = render 
+            = render :partial => "announcement/recent"
 
         #clear
 

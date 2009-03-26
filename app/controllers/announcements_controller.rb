@@ -106,6 +106,26 @@ class AnnouncementsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  
+  def mine
+    @announcements = Announcement.find(:all, :conditions=>["user_id = ?", current_user.id]).paginate(:page => params[:page], :per_page => 5)
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @announcements }
+    end
+  end
+  
+  def recent
+    debugger
+    @announcements = Announcement.find(:all, :order=>"created_at desc", :limit=> 5)
+    
+    respond_to do |format|
+      format.html
+    end
+    
+  end
 
 
 end
