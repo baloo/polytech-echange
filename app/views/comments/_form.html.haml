@@ -1,0 +1,16 @@
+- form_for setup_comment(comment) do |form|
+  = form.hidden_field :parent_id
+  = form.hidden_field :announcement_id
+  = form.error_messages
+
+  %p
+    = form.label :title, t(:comment_title)
+    %br
+    = form.text_field :title
+  %p
+    = form.label :body, t(:comment_body)
+    %br
+    = form.text_area :body
+  %p
+    = form.submit t(:comment_preview, :default => 'preview')
+    = form.submit t(:comment_post) if preview_mode

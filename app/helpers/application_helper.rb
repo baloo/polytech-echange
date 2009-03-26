@@ -17,7 +17,7 @@ module ApplicationHelper
   def posted_by(content)
     user = content.user || current_user
     if user
-      user_link = link_to(user.login, user)
+      user_link = user.login
       #TODO : localize datetime
       date_time = (content.created_at || DateTime.now).to_s(:posted)
       t :posted_by, {:user => user_link, :date => date_time}

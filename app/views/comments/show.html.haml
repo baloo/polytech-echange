@@ -1,0 +1,6 @@
+- title @comment.title
+= render :partial => 'comment', :locals => {:comment => @comment}
+%p
+  \[
+  = link_to t(:comment_back_to_announcement), announcement_path(@comment.announcement)
+  \]

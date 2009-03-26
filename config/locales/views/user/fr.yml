@@ -1,0 +1,14 @@
+fr:
+  user_login: "Connexion"
+  user_signin: "Inscription"
+  user_password: "mot de passe"
+  user_remember_me: "Se souvenir"
+  user_email: "email"
+  user_password_confirm: "confirmez votre mot de passe"
+  user_signup: "Inscription"
+  session_login: "Connexion"
+  user_block_title: "{{user}}"
+  user_logout: "Deconnexion"
+  user_block_title_not_logged: "Identification"
+  user_logme_in: "Connexion"
+

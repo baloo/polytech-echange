@@ -1,0 +1,6 @@
+%li.comment{:id => "comment-#{child.comment.id}"}
+  = render :partial => "comments/comment", :locals => {:comment => child.comment }
+  - if !child.children.empty?
+    %ul.thread
+      - child.children.each do |child|
+        = render :partial => 'comments/thread', :locals => {:child => child}

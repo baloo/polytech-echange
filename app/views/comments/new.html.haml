@@ -1,0 +1,5 @@
+= h2 t :comment_new
+
+= render :partial => 'preview', :object => @comment if @preview_mode
+
+= render :partial => 'form', :locals => {:comment => @comment, :preview_mode => @preview_mode}

@@ -1,4 +1,9 @@
 class Announcement < Content
+  has_many :comments
+
+  validates_presence_of :title,   :message => I18n.t(:announcement_title_missing)
+  validates_presence_of :body,    :message => I18n.t(:announcement_body_missing)
+
   ### Workflow
   # Setup
   acts_as_state_machine :initial => :draft, :column => 'status'
@@ -19,6 +24,11 @@ class Announcement < Content
   event :refuse do
     transitions :to => :refused, :from => [:draft]
   end
+
+  def threads
+    Threads.all(self.id)
+  end
+
 
 
   # ACL 

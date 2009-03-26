@@ -1,0 +1,10 @@
+%h4
+  = link_to "Commentaire : #{comment.title}", [comment.announcement, comment]
+%p
+  = posted_by(comment)
+.content
+  = comment.body
+%p
+  \[
+  = link_to t(:comment_answer), answer_comment_path(:announcement_id => comment.announcement_id, :parent_id => comment.id)
+  \]

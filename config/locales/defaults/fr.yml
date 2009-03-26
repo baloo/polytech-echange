@@ -4,3 +4,4 @@
 fr:
   posted_by: "Poste par {{user}} le {{date}}"
   page_generated_by: "Page générée par {{ruby}}"
+  layout_home: "Accueil"
