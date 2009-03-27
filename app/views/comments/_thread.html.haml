@@ -1,5 +1,4 @@
 %li.comment{:id => "comment-#{child.comment.id}"}
-  %p.ajax
   = render :partial => "comments/comment", :locals => {:comment => child.comment }
   - if !child.children.empty?
     %ul.thread
