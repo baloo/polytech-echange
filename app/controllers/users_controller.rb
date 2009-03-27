@@ -1,3 +1,4 @@
+# La classe de controle des utilisateurs
 class UsersController < ApplicationController
 
 
@@ -6,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  # La gestion du formulaire d'enregistrement
   def create
     cookies.delete :auth_token
     # protects against session fixation attacks, wreaks havoc with 
@@ -17,7 +19,7 @@ class UsersController < ApplicationController
     if @user.errors.empty?
       self.current_user = @user
       redirect_back_or_default('/')
-      flash[:notice] = "Thanks for signing up!"
+      flash[:notice] = t :user_thanks_signing_up
     else
       render :action => 'new'
     end

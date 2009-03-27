@@ -95,7 +95,7 @@ class AnnouncementsController < ApplicationController
     respond_to do |format|
       # Si on est pas en mode preview et que la mise à jour des informations de l'objet dans la base se passe bien
       if !@preview_mode && @announcement.update_attributes(params[:announcement])
-        flash[:notice] = 'Announcement was successfully updated.'
+        flash[:notice] = t :announcement_successfully_updated
         format.html { redirect_to(@announcement) }
         format.xml  { head :ok }
       else

@@ -3,7 +3,9 @@
 
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
+  #On permet de catcher et logger les exceptions
   include ExceptionLoggable
+  #On include le system d'authentification
   include AuthenticatedSystem
 
 
@@ -16,12 +18,15 @@ class ApplicationController < ActionController::Base
   # from your application log (in this case, all fields with names like "password"). 
   # filter_parameter_logging :password
   
+  # Avant tout, on execute la fonction seo_filter
   before_filter :seo_filter
 
   unless ActionController::Base.consider_all_requests_local
-    # yeah, its a long line
+    #Le traitement des erreurs access forbidden
     rescue_from Exceptions::UserAccessDeniedError, Exceptions::UserCreateDeniedError, Exceptions::UserEditDeniedError, Exceptions::UserDeleteDeniedError, :with => :render_403
+    #Le traitement des erreurs page not found
     rescue_from ActiveRecord::RecordNotFound, ActionController::RoutingError, ActionController::UnknownController, ActionController::UnknownAction, :with => :render_404
+    #Le traitement des erreurs serveur
     rescue_from RuntimeError, :with => :render_500
   end
 
@@ -50,6 +55,7 @@ private
 
 protected
 
+  #Fonction qui nous permet de parametrer différentes valeurs
   def seo_filter
     @title    = %w(Polytech-echange)
     @keywords = %w(Polytech Echange)
