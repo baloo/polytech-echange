@@ -11,4 +11,5 @@ fr:
   comment_back_to_announcement: "Retour à l'annonce"
   comment_body_missing: "Le message est manquant"
   comment_title_missing: "Le sujet est manquant"
+  comment_successfully_created: "Le commentaire a été crée"
 

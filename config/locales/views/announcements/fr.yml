@@ -20,4 +20,5 @@ fr:
   announcement_search_send: "Chercher"
   announcement_search_block: "Recterche"
   announcement_archives: "Archives"
-
+  announcement_successfully_created: "Annonce crée"
+  announcement_successfully_updated: "Annonce mise à jour"

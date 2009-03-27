@@ -1,7 +1,8 @@
 fr:
   user_login: "Connexion"
+  user_login_form: "Identifiant"
   user_signin: "Inscription"
-  user_password: "mot de passe"
+  user_password: "Mot de passe"
   user_remember_me: "Se souvenir"
   user_email: "email"
   user_password_confirm: "confirmez votre mot de passe"
@@ -11,4 +12,8 @@ fr:
   user_logout: "Deconnexion"
   user_block_title_not_logged: "Identification"
   user_logme_in: "Connexion"
+  user_login_unsuccessfull: "L'identifiant ou le mot de passe est incorrect"
+  user_login_successfull: "Bienvenue, vous etes maintenant idéntifié(e)"
+  user_logout_successfull: "Vous vous etes déconnecté(e)"
+  user_thanks_signing_up: "Merci pour votre inscription, bienvenue parmis nous"
 
