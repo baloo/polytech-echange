@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/96/trunk/plugins/jrails
+END
+init.rb
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/95/trunk/plugins/jrails/init.rb
+END
+CHANGELOG
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/84/trunk/plugins/jrails/CHANGELOG
+END
+install.rb
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/52/trunk/plugins/jrails/install.rb
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/50/trunk/plugins/jrails/README
+END

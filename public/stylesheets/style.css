@@ -300,3 +300,10 @@ span.translation_missing {
   list-style-image: none;
   list-style-type: none;
 }
+
+#left #flash{
+  background-color: #dfffe1;
+  color: #333333;
+  padding: 3px;
+  text-align: center;
+}

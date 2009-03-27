@@ -1,0 +1,40 @@
+8
+
+dir
+96
+http://ennerchi.googlecode.com/svn/trunk/plugins/jrails/tasks
+http://ennerchi.googlecode.com/svn
+
+
+
+2008-06-19T17:09:12.132902Z
+57
+aaronchi
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+1bc9508b-f83e-0410-b78e-05f979d4f8d9
+
+jrails.rake
+file
+
+
+
+
+2009-03-27T08:58:52.000000Z
+322408324ff8b854db48fd5d599ae719
+2008-06-19T17:09:12.132902Z
+57
+aaronchi
+

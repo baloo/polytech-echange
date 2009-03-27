@@ -1,0 +1,67 @@
+8
+
+dir
+96
+http://ennerchi.googlecode.com/svn/trunk/plugins/jrails/javascripts
+http://ennerchi.googlecode.com/svn
+
+
+
+2008-12-02T17:04:48.403196Z
+94
+aaronchi
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+1bc9508b-f83e-0410-b78e-05f979d4f8d9
+
+jrails.js
+file
+
+
+
+
+2009-03-27T08:58:52.000000Z
+eed1e2dfca94d32b56b7a0a5d0145af7
+2008-12-02T17:04:48.403196Z
+94
+aaronchi
+
+sources
+dir
+
+jquery-ui.js
+file
+
+
+
+
+2009-03-27T08:58:52.000000Z
+4cc062b5cca2ec99833a8d542fe34081
+2008-06-28T13:23:56.889774Z
+59
+aaronchi
+
+jquery.js
+file
+
+
+
+
+2009-03-27T08:58:52.000000Z
+a9331828c517ac5d97f93b3cfdbcc9bc
+2008-05-26T19:20:54.126430Z
+43
+aaronchi
+
