@@ -1,5 +1,6 @@
-Installer les headers de sqlite (les dépendances suivent):
+Installer les headers de sqlite3:
 apt-get install libsqlite3-dev
+
 
 Installer les gems :
 gem sources -a http://gems.github.com
