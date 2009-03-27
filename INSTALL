@@ -1,5 +1,9 @@
+Installer les headers de sqlite (les dépendances suivent):
+apt-get install libsqlite3-dev
+
 Installer les gems :
-$ gem install haml columnize linecache will_paginate i18n mislav-will_paginate rails rake rdoc RedCloth rubyist-aasm sqlite3-ruby
+gem sources -a http://gems.github.com
+gem install haml columnize linecache will_paginate i18n mislav-will_paginate rails rake rdoc RedCloth rubyist-aasm sqlite3-ruby
 
 Mettre en place la base de données:
 rake db:migrate
